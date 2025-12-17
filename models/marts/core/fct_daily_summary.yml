@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: fct_daily_summary
+    description: Aggregated fact table combining retail and transport metrics for cross-domain analysis. Enables correlation analysis between consumer behavior and mobility patterns during COVID-19.
+    columns:
+      - name: daily_summary_key
+        description: Surrogate key for the daily summary record
+      - name: date_key
+        description: Foreign key to dim_date
+      - name: date_value
+        description: The actual date value
+      - name: year
+        description: Year component from date dimension
+      - name: month
+        description: Month component (1-12) from date dimension
+      - name: month_name
+        description: Full name of the month
+      - name: quarter
+        description: Quarter of year (1-4)
+      - name: week_of_year
+        description: Week number of the year
+      - name: day_name
+        description: Full name of the day
+      - name: is_weekend
+        description: Boolean indicating if the date falls on a weekend
+      - name: retail_observations
+        description: Total count of retail price observations for the day
+      - name: supermarket_count
+        description: Number of unique supermarkets with data on this day
+      - name: category_count
+        description: Number of unique product categories with data on this day
+      - name: avg_price_gbp
+        description: Average product price in GBP for the day
+      - name: median_price_gbp
+        description: Median product price in GBP for the day
+      - name: price_stddev_gbp
+        description: Standard deviation of prices in GBP for the day
+      - name: avg_unit_price_gbp
+        description: Average unit price in GBP for the day
+      - name: own_brand_ratio
+        description: Ratio of own-brand products to total products (0.0 to 1.0)
+      - name: transport_observations
+        description: Total count of transport usage observations for the day
+      - name: transport_type_count
+        description: Number of unique transport types tracked on this day
+      - name: avg_transport_usage
+        description: Average transport usage value across all types (1.0 = baseline)
+      - name: avg_pct_change_from_baseline
+        description: Average percentage change from baseline across all transport types
+      - name: above_baseline_count
+        description: Count of transport types with usage above baseline
+      - name: below_baseline_count
+        description: Count of transport types with usage below baseline
+      - name: at_baseline_count
+        description: Count of transport types with usage at baseline
+      - name: avg_road_usage
+        description: Average usage value for road transport (cars, commercial vehicles)
+      - name: avg_rail_usage
+        description: Average usage value for rail transport (tube, national rail)
+      - name: avg_bus_usage
+        description: Average usage value for bus transport (TfL bus)
+      - name: data_completeness
+        description: Indicator of data availability (Complete, Retail Only, Transport Only, No Data)
+      - name: covid_period
+        description: Classification of the date by UK COVID-19 restriction periods
+      - name: mobility_indicator
+        description: Categorization of overall mobility level (Near Normal, Moderately Reduced, Significantly Reduced, Severely Reduced)
+

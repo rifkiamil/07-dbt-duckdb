@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: fct_transport_usage
+    description: Fact table for COVID-19 transport usage statistics with derived metrics
+    columns:
+      - name: transport_usage_key
+        description: Surrogate key for the transport usage record
+      - name: date_key
+        description: Foreign key to dim_date
+      - name: transport_type
+        description: Type of transport
+      - name: usage_value
+        description: Relative usage value compared to baseline
+      - name: usage_category
+        description: Categorization of usage (Above/At/Below Baseline)
+      - name: percent_change_from_baseline
+        description: Percentage change from baseline (0 = no change)
+      - name: year
+        description: Year from date dimension
+      - name: month
+        description: Month from date dimension
+      - name: quarter
+        description: Quarter from date dimension
+      - name: is_weekend
+        description: Weekend indicator from date dimension
+

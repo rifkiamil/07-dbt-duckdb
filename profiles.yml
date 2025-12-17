@@ -1,0 +1,8 @@
+transport_retail_dbt_duck_project:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'transport_retail_dbt_duck_project.duckdb'
+      threads: 4
+

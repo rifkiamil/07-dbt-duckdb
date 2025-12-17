@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_combined_daily_metrics
+    description: Combined staging fact table that joins retail and transport data by date, providing daily aggregated metrics from both domains for cross-analysis
+    columns:
+      - name: metric_date
+        description: Date of the metrics observation
+      - name: combined_metrics_key
+        description: Surrogate key for the combined metrics record (MD5 hash of date)
+      - name: retail_price_count
+        description: Total number of retail price observations for the date
+      - name: unique_products
+        description: Count of unique products with price data on this date
+      - name: unique_supermarkets
+        description: Count of unique supermarkets with data on this date
+      - name: unique_categories
+        description: Count of unique product categories on this date
+      - name: avg_price_gbp
+        description: Average product price in GBP across all observations
+      - name: min_price_gbp
+        description: Minimum product price in GBP for the date
+      - name: max_price_gbp
+        description: Maximum product price in GBP for the date
+      - name: avg_unit_price_gbp
+        description: Average unit price in GBP across all observations
+      - name: own_brand_count
+        description: Count of own-brand product price observations
+      - name: transport_observation_count
+        description: Total number of transport usage observations for the date
+      - name: transport_types_tracked
+        description: Count of unique transport types tracked on this date
+      - name: avg_transport_usage
+        description: Average transport usage value across all transport types (1.0 = baseline)
+      - name: min_transport_usage
+        description: Minimum transport usage value for the date
+      - name: max_transport_usage
+        description: Maximum transport usage value for the date
+      - name: motor_vehicles_usage
+        description: Usage value for all motor vehicles (relative to baseline)
+      - name: tfl_tube_usage
+        description: TfL Tube usage value (relative to baseline)
+      - name: tfl_bus_usage
+        description: TfL Bus usage value (relative to baseline)
+      - name: national_rail_usage
+        description: National Rail usage value (relative to baseline)
+      - name: has_retail_data
+        description: Boolean flag indicating if retail data is available for this date
+      - name: has_transport_data
+        description: Boolean flag indicating if transport data is available for this date
+      - name: has_both_sources
+        description: Boolean flag indicating if both retail and transport data are available for this date
+

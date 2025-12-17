@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: Dimension table for retail products containing product attributes, categorization, and derived classifications
+    columns:
+      - name: product_key
+        description: Surrogate key for the product (MD5 hash of product name and category)
+      - name: product_name
+        description: Name of the product
+      - name: category_name
+        description: Original product category from source data
+      - name: unit
+        description: Original unit of measurement from source data
+      - name: is_own_brand
+        description: Boolean indicating if the product is a supermarket own-brand product
+      - name: category_group
+        description: High-level category grouping (Fresh Produce, Protein, Dairy, Bakery, Frozen Foods, Beverages, Snacks & Confectionery, Household, Health & Personal Care, Other)
+      - name: is_perishable
+        description: Boolean flag indicating if the product is a fresh/perishable item
+      - name: unit_type
+        description: Standardized unit type classification (Weight, Volume, Each, Pack, Other)
+

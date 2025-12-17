@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_supermarket
+    description: Dimension table for UK supermarkets containing store attributes and market positioning classifications
+    columns:
+      - name: supermarket_key
+        description: Surrogate key for the supermarket (MD5 hash of supermarket name)
+      - name: supermarket_name
+        description: Name of the supermarket chain
+      - name: store_format
+        description: Type of store format (Express/Convenience, Hypermarket, Standard Supermarket)
+      - name: market_segment
+        description: Market positioning of the supermarket (Discount, Premium, Mid-Market)
+      - name: is_discounter
+        description: Boolean flag indicating if the supermarket is a discount retailer (e.g., Aldi, Lidl)
+

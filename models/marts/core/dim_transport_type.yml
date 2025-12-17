@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_transport_type
+    description: Dimension table for transport types containing mode classifications and categorizations from COVID-19 transport usage data
+    columns:
+      - name: transport_type_key
+        description: Surrogate key for the transport type (MD5 hash of transport type)
+      - name: transport_type
+        description: Original transport type identifier from source data
+      - name: transport_type_display_name
+        description: Human-readable display name for the transport type
+      - name: transport_mode
+        description: High-level transport mode classification (Road, Rail, Bus, Other)
+      - name: transport_category
+        description: Categorization by ownership/usage (Public, Private/Commercial, Other)
+      - name: is_london_specific
+        description: Boolean flag indicating if this is a London-specific transport metric (TfL services)
+      - name: is_commercial_freight
+        description: Boolean flag indicating if this is a commercial/freight transport type
+      - name: is_aggregate_metric
+        description: Boolean flag indicating if this is an aggregate metric (e.g., all_motor_vehicles)
+

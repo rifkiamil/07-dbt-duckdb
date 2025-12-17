@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: raw_data
+    description: Raw data files for COVID-19 transport usage and UK retail prices
+    tables:
+      - name: transport_usage
+        description: COVID-19 transport usage statistics showing relative usage across different transport types
+        meta:
+          external_location: "read_csv_auto('{{ env_var('DBT_PROJECT_DIR', '') }}/raw/transport-use-during-the-coronavirus-covid-19-pandemic/COVID-19-transport-use-statistics.csv')"
+        columns:
+          - name: date
+            description: Date of the observation
+          - name: transport_type
+            description: Type of transport (cars, buses, rail, etc.)
+          - name: value
+            description: Relative usage value (baseline = 1.0)
+      
+      - name: retail_prices
+        description: UK retail and supermarket price data time series
+        meta:
+          external_location: "read_parquet('{{ env_var('DBT_PROJECT_DIR', '') }}/raw/time-series-uk-retail-supermarket-price-data/base_retail_gb_snappy.parquet')"
+

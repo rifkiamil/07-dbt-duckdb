@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_transport_usage
+    description: Staging model for COVID-19 transport usage statistics. Cleans and types raw CSV data.
+    columns:
+      - name: transport_usage_key
+        description: Surrogate key for the transport usage record
+      - name: usage_date
+        description: Date of the transport usage observation
+      - name: transport_type
+        description: Type of transport (cars, light_commercial_vehicles, heavy_goods_vehicles, all_motor_vehicles, tfl_tube, tfl_bus, national_rail, national_rail_noCR)
+      - name: usage_value
+        description: Relative usage value compared to baseline (1.0 = baseline level)
+

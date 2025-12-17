@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fct_retail_prices
+    description: Fact table for UK retail supermarket prices
+    columns:
+      - name: retail_price_key
+        description: Surrogate key for the retail price record
+      - name: date_key
+        description: Foreign key to dim_date
+      - name: supermarket_name
+        description: Name of the supermarket
+      - name: product_name
+        description: Name of the product
+      - name: category_name
+        description: Product category
+      - name: price_gbp
+        description: Price in British Pounds
+      - name: price_unit_gbp
+        description: Unit price in British Pounds
+      - name: unit
+        description: Unit of measurement
+      - name: is_own_brand
+        description: Whether the product is an own-brand product
+      - name: year
+        description: Year from date dimension
+      - name: month
+        description: Month from date dimension
+      - name: quarter
+        description: Quarter from date dimension
+      - name: is_weekend
+        description: Weekend indicator from date dimension
+
